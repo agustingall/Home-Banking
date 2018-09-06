@@ -1,5 +1,5 @@
 //Declaración de variables
-var nombreUsuario = "Agustín Galleguillo";
+var nombreUsuario = "invitado";
 var saldoCuenta = 10000;
 var limiteExtraccion = 2000;
 var servicio = {agua : 350,
@@ -18,7 +18,6 @@ cargarNombreEnPantalla();
 actualizarSaldoEnPantalla();
 actualizarLimiteEnPantalla();
  
-//Funciones que tenes que completar
 function validar(R){
 	if (R == null  || isNaN(R) || R ==  0 ){
 		alert("El dato introducido es inválido.");
@@ -122,16 +121,16 @@ function pagarServicio() {
 	 							   "\n2- Luz" + "\n3- Internet" + "\n4- Teléfono");
 
 	switch (eleccion) {
-		case 1:
+		case '1':
 			pagar(servicio.agua, "Agua");
 			break;
-		case 2:
+		case '2':
 			pagar(servicio.luz, "Luz");
 			break;
-		case 3:
+		case '3':
 			pagar(servicio.internet, "Internet");
 			break;
-		case 4:
+		case '4':
 			pagar(servicio.telefono, "Telefono");
 			break;
 		default:
@@ -158,15 +157,7 @@ function transferirDinero() {
 
 function iniciarSesion() {
 
-	var codUser = prompt("Ingrese el código de su cuenta");
-	if (codUser == codSeguridad){
-		alert("Bienvenido/a Agustín Galleguillo ya puede comenzar a realizar operaciones ");
-	}
-	else{
-		alert("Código incorrecto. Tu dinero ha sido retenido por cuestiones de seguridad");
-		saldoCuenta = 0;
-		actualizarSaldoEnPantalla();
-	}
+	alert(" Entrando como invitado ");
 
 
 }
@@ -183,4 +174,5 @@ function actualizarSaldoEnPantalla() {
 function actualizarLimiteEnPantalla() {
     document.getElementById("limite-extraccion").innerHTML = "Tu límite de extracción es: $" + limiteExtraccion;
 }
+
 
